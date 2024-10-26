@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/uikit.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class = 'uk-section-secondary uk-section uk-section-small' id ="i">
+		<div class = 'uk-container uk-container-small'>
+			<a href="index.html" class="uk-logo">  🖥   CompTest      </a>
+						<button class="uk-button uk-button-default" onclick="window.location.href = 'Pages/Tests.html';" class = 'menu'>Тесты</button>
+			<button class="uk-button uk-button-default" onclick="window.location.href = 'Pages/User.html';" class = 'menu'>Профиль</button>
+			<button class="uk-button uk-button-default" onclick="window.location.href = 'Pages/Contacts.html';" class = 'menu'>Мэнеджеры</button>
+            <button class="uk-button uk-button-default" onclick="window.location.href = 'Pages/zayavka.html';" class = 'menu'>Вопросы</button>
+			<button class="uk-button uk-button-default" onclick="window.location.href = 'Pages/auth.html';" class = 'menu'>Вход/Регистрация</button>
+		</div>
+ <div class="progress-bar" id="progressBar"></div>
+	</header>
+	<div class = 'uk-section uk-section-large uk-background-cover uk-section-secondary' data-src = 'Pictures/BACK_BLACK.jpg' uk-img>
+		<div class="uk-container uk-container-small">
+			<h1>О сайте</h1>
+			<h3>Сайт по изучению компьютеров</h3>
+		</div>
+	</div>
+
+		<div class = 'uk-section uk-section-muted'>
+			<div class = 'uk-container uk-container-small'>
+				<h2 class = 'uk-text-center uk-heading-line uk-margin-large'><span>Последние новости про компьютеры</span></h2>
+				<div class = 'uk-child-width-3-4 uk-grid-match' uk-grid>
+					<div class="uk-card uk-card-hover uk-card-body uk-card-primary" ><h3 align="center">Про охлждение</h3>
+						<h3 id = 'novostH3'>Новости прогружаются</h3>
+						<p id = 'novost'>Новости прогружаются</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	<div class = 'uk-section uk-section-muted' id = 'slider'>
+		<div class = 'uk-container uk-container-small'>
+			<h2 class = 'uk-text-center uk-heading-line uk-margin-large'><span>Инфомация</span></h2>
+			<div class = 'uk-child-width-3-4 uk-grid-match' uk-grid>
+				<div class="uk-card uk-card-hover uk-card-body uk-card-primary" ><h3 align="center">Зачем нужен наш сервис?</h3>
+					<p>Наш сервис создан для людей, которые хотят узнать о компьютерах больше.
+					</p></div>
+				<div class="uk-card uk-card-hover uk-card-body uk-card-default" ><h3 align="center">Сколько работает наш сервис?</h3> <p>
+					Наш сервис работает более 5 лет и уже обучил более 10 тысяч людей
+					</p></div>
+				<div class="uk-card uk-card-hover uk-card-body uk-card-default" ><h3 align="center">Сколько стоит обучение?</h3>
+				<p>Обучение абсолютно бесплатно!
+				</p></div>
+				<div class="uk-card uk-card-hover uk-card-body uk-card-secondary" ><h3 align="center">Сколько занимает обучение?</h3>
+					<p>В среднем обучение занимает от 15 часов, до 30. Всё зависит от пользователя.
+					</p></div>
+			</div>
+
+		</div>
+		<hr class="uk-divider-icon" >
+		<div align="center">
+		 <a class="uk-button uk-button-primary" href="#i">Скролл вверх</a>
+		</div>
+					<hr class="uk-divider-icon">
+	</div>
+
+<footer>
+<div class="uk-section uk-section-secondary">
+	<p class = 'footer'>Все ваши данные защищены</p>
+	<p class = 'footer'>ИНН:0000000000000000</p>
+	<p class = 'footer'>Номер организации: 0000000000000000000000</p>
+</div>
+</footer>
+<script src="js/uikit.min.js"></script>
+	<script src="js/uikit-icons.min.js"></script>
+	<script src="js/START.js"></script>
+	<script>
+		'use strict';
+		let xml1 = new XMLHttpRequest();
+		xml1.open('GET', 'http://37.77.104.246/api/jsonstorage/?id=a1af468941fe4ec0472c420ea61c0e32', true)
+		xml1.send();
+		xml1.addEventListener('readystatechange', function()
+		{
+
+			if ((xml1.readyState == 4) && (xml1.status == 200))
+			{
+				let js = JSON.parse(xml1.responseText)
+				console.log(js);
+				novostH3.innerHTML = js.title;
+				novost.innerHTML = js.description;
+
+			}
+			// else{
+			// 	alert('error');
+			// }
+		});
+		function progressBar() {
+			// Узнаем на сколько страница прокручена
+			let scroll = document.body.scrollTop || document.documentElement.scrollTop;
+			// Узнаем высоту всей страницы
+			let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+			// Получаем в % на сколько прокручена страница
+			let scrolled = scroll / height * 100;
+
+			// Подставляем % прокрутки в ширину нашей линии
+			document.getElementById('progressBar').style.width = scrolled + '%';
+		}
+
+// Запускаем функцию, когда пользователя скролит
+		window.addEventListener('scroll', progressBar);
+	</script>
+</body>
+</html>

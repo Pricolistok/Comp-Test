@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/uikit.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<header class = 'uk-section-secondary uk-section uk-section-small' id = 'i' >
+		<div class = 'uk-container uk-container-small'>
+			<a href="../index.html" class="uk-logo"> 🖥   CompTest      </a>
+						<button class="uk-button uk-button-default" onclick="window.location.href = 'Tests.html';" class = 'menu'>Тесты</button>
+			<button class="uk-button uk-button-default" onclick="window.location.href = 'User.html';" class = 'menu'>Профиль</button>
+			<button class="uk-button uk-button-default" onclick="window.location.href = 'Contacts.html';" class = 'menu'>Мэнеджеры</button>
+            <button class="uk-button uk-button-default" onclick="window.location.href = 'zayavka.html';" class = 'menu'>Вопросы</button>
+			<button class="uk-button uk-button-default" onclick="window.location.href = 'auth.html';" class = 'menu'>Вход/Регистрация</button>
+		</div>
+		 <div class="progress-bar" id="progressBar"></div>
+	</header>
+	<div class = 'uk-section uk-section-large uk-background-cover uk-section-secondary' data-src = 'Pictures/camera-solid-24.png' uk-img>
+		<div class="uk-container uk-container-small">
+			<h1>Отделание на Профсоюзной</h1>
+		</div>
+	</div>
+	<div class = 'uk-section'>
+		<div class="uk-container uk-container-small">
+			<h2 class = 'uk-text-center uk-heading-line uk-margin-large'><span>Адрес нашего офиса</span></h2>
+		</div>
+		<div uk-grid>
+			<img src="../Pictures/MAP.jpg " id = 'map'>
+			<div class = 'uk-width-2-3'><h3>Новочерёмкинская 55</h3>
+				<p>Школа Программистов </p>
+				<p>Если у вас возникли вопросы, можете обратиться в наш офис</p>
+			</div>
+		</div>
+	</div>
+	<div class = 'uk-section uk-section-muted'>
+		<div class = 'uk-container uk-container-small'>
+			<h2 class = 'uk-text-center uk-heading-line uk-margin-large'><span>Контакты наших мэнеджоров</span></h2>
+			<div class = 'uk-child-width-1-2 uk-grid-match' uk-grid>
+				<div class="uk-card uk-card-hover uk-card-body uk-card-primary"><h3>Мэнеджер</h3>
+					<p>Андрей 8-900-000-00-00 man@mail.ru
+					</p></div>
+				<div class="uk-card uk-card-hover uk-card-body uk-card-default"><h3>Конслуьтант</h3> <p>
+					Анна 8-901-000-00-00 man1@mail.ru
+					</p></div>
+				<div class="uk-card uk-card-hover uk-card-body uk-card-default"><h3>Конслуьтант</h3>
+				<p>Антон 8-902-000-00-00 man2@mail.ru
+				</p></div>
+				<div class="uk-card uk-card-hover uk-card-body uk-card-secondary"><h3>Конслуьтант</h3>
+					<p>Евгений 8-903-000-00-00 man2@mail.ru
+					</p></div>
+			</div>
+		</div>
+	</div>
+		<hr class="uk-divider-icon" id = 'a'>
+		<div align="center">
+		 <a class="uk-button uk-button-primary" href="#i">Скролл вверх</a>
+						<hr class="uk-divider-icon" id = 'a'>
+		</div>
+
+	<footer>
+<div class="uk-section uk-section-secondary">
+	<p id = 'footer'>Все ваши данные защищены</p>
+	<p id = 'footer'>ИНН:0000000000000000</p>
+	<p id = 'footer'>Номер организации: 0000000000000000000000</p>
+</div>
+</footer>
+
+	<script>
+		'use strict'
+		function progressBar() {
+    // Узнаем на сколько страница прокручена
+    let scroll = document.body.scrollTop || document.documentElement.scrollTop;
+    // Узнаем высоту всей страницы
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    // Получаем в % на сколько прокручена страница
+    let scrolled = scroll / height * 100;
+
+    // Подставляем % прокрутки в ширину нашей линии
+    document.getElementById('progressBar').style.width = scrolled + '%';
+}
+
+// Запускаем функцию, когда пользователя скролит
+window.addEventListener('scroll', progressBar);
+	</script>
+	<script src="../js/uikit-icons.min.js"></script>
+	<script src="../js/uikit.min.js"></script>
+	<script src="js/START.js"></script>
+</body>
+</html>

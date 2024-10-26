@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/uikit.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<header class = 'uk-section-secondary uk-section uk-section-small' id = 'i'>
+		<div class = 'uk-container uk-container-small'>
+			<a href="../index.html" class="uk-logo"> 🖥   CompTest      </a>
+						<button class="uk-button uk-button-default" onclick="window.location.href = 'Tests.html';" class = 'menu'>Тесты</button>
+			<button class="uk-button uk-button-default" onclick="window.location.href = 'User.html';" class = 'menu'>Профиль</button>
+			<button class="uk-button uk-button-default" onclick="window.location.href = 'Contacts.html';" class = 'menu'>Мэнеджеры</button>
+            <button class="uk-button uk-button-default" onclick="window.location.href = 'zayavka.html';" class = 'menu'>Вопросы</button>
+			<button class="uk-button uk-button-default" onclick="window.location.href = 'auth.html';" class = 'menu'>Вход/Регистрация</button>
+		</div>
+		 <div class="progress-bar" id="progressBar"></div>
+	</header>
+	<div class = 'uk-section uk-section-large uk-background-cover uk-section-secondary' data-src = 'Pictures/camera-solid-24.png' uk-img>
+		<div class="uk-container uk-container-small">
+			<h1>Профиль</h1>
+		</div>
+	</div>
+	<div class = 'uk-section'>
+		<div class="uk-container uk-container-small">
+			<h2 class = 'uk-text-center uk-heading-line uk-margin-large'><span>О себе</span></h2>
+		</div>
+		<div uk-grid>
+			<img src="../Pictures/img.png" id = 'Pic_photo'>
+			<div class = 'uk-width-2-3'><h3 id = 'nameus'>Иван</h3>
+				<h3 id = 'surnameus'>Иванов</h3>
+				<p id = 'workus'>Врач</p>
+				<p id  = 'vozrus'>Возраст: 27 лет</p>
+				<h3>О себе</h3>
+				<p>Хочу изучить о компьютерах всё</p>
+				<p id = 'aboutus'>С самого детства увлекался компьютерными играми, но только сейчас решил понять как <br> это всё работает со стороны компьютера, и зарегестрировался на этом сайте <br></p>
+			</div>
+		</div>
+	</div>
+			<hr class="uk-divider-icon" id = 'a'>
+		<div align="center">
+		 <a class="uk-button uk-button-primary" href="#i">Скролл вверх</a>
+								<hr class="uk-divider-icon" id = 'a' >
+		</div>
+
+	<footer>
+<div class="uk-section uk-section-secondary">
+	<p id = 'footer'>Все ваши данные защищены</p>
+	<p id = 'footer'>ИНН:0000000000000000</p>
+	<p id = 'footer'>Номер организации: 0000000000000000000000</p>
+</div>
+</footer>
+
+	<script src="../js/uikit-icons.min.js"></script>
+	<script src="../js/uikit.min.js"></script>
+<script src="../js/START.js.js"></script>
+<script>
+	'use strict'
+	        let nameus = document.querySelector('#nameus')
+        let surnameus = document.querySelector('#surnameus')
+        let workus = document.querySelector('#workus')
+        let aboutus = document.querySelector('#aboutus')
+        let vozrus = document.querySelector('#vozrus')
+
+                nameus.innerHTML = localStorage.getItem('nameloc')
+                surnameus.innerHTML = localStorage.getItem('surnameloc')
+                workus.innerHTML = localStorage.getItem('workloc')
+                aboutus.innerHTML = localStorage.getItem('aboutloc')
+                vozrus.innerHTML = localStorage.getItem('vozrloc')
+	let p_date = document.createElement('p')
+	p_date.innerHTML = localStorage.getItem('dateloc')
+	aboutus.append(p_date)
+
+
+		function progressBar() {
+    // Узнаем на сколько страница прокручена
+    let scroll = document.body.scrollTop || document.documentElement.scrollTop;
+    // Узнаем высоту всей страницы
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    // Получаем в % на сколько прокручена страница
+    let scrolled = scroll / height * 100;
+
+    // Подставляем % прокрутки в ширину нашей линии
+    document.getElementById('progressBar').style.width = scrolled + '%';
+}
+
+// Запускаем функцию, когда пользователя скролит
+window.addEventListener('scroll', progressBar);
+	</script>
+</body>
+</html>

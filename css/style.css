@@ -1,0 +1,89 @@
+#Pic_photo
+{
+    width: 250px;
+    height: 250px;
+    margin: 50px;
+}
+#Pic_photo_zayvka
+{
+    width: 120px;
+    height: 120px;
+    margin: 80px;
+    border-radius: 20px;
+}
+#Pic_photo_zayvka_demo
+{
+    width: 300px;
+    height: 350px;
+    margin: 30px;
+    border-radius: 20px;
+}
+.menu
+{
+    margin: 30px;
+}
+#map
+{
+    width: 500px;
+    height: 300px;
+    margin: 40px;
+}
+#username
+{
+    margin: 20px;
+}
+#nameu
+{
+    margin: 20px;
+}
+#surnameu
+{
+    margin: 20px;
+}
+#password
+{
+    margin: 20px;
+}
+#reg_auth
+{
+    margin-top: 100px;
+}
+#btn_gl
+{
+    width: 350px;
+    height: 100px;
+    margin-left: 70%;
+}
+#about
+{
+    margin: 20px;
+}
+#work
+{
+    margin: 20px;
+}
+#vozr
+{
+    margin: 20px;
+}
+.progress-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 4px;
+/ / Высота линии, можно менять / подбирать width: 0 %;
+    background: red;
+    z-index: 1;
+
+}
+.footer
+{
+
+}
+
+
+
+
+
+
+
